@@ -19,7 +19,7 @@ pipeline
            steps {
               node ('Build-Nginix')
                    {
-                sh 'sudo cp /home/ubuntu/workspace/MyPipelinejob1/* /var/www/devops/ '             
+                sh 'sudo cp /home/ubuntu/workspace/MyPipelinejob1/* /var/www/html/ '             
                    }
                  } 
         }
