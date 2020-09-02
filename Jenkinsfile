@@ -1,10 +1,10 @@
-pipeline {
-   
+pipeline 
+{   
    agent {
      label 'Build-Nginix'
-     } 
-   
-     stages {
+         }   
+     stages 
+    {
        stage ('Checkout') 
           {
            steps {
@@ -13,5 +13,15 @@ pipeline {
                                    }
                  }
             } 
-       }
+       
+        stage ('NginxDeployment')
+        {
+           steps {
+              node ('Build-nglnx')
+                   {
+                sh 'sudo cp /home/ubuntu/workspace/MyPipelinejob1/* /var/www/devops/ '             
+                   }
+                 } 
+        }
+    }
 }
